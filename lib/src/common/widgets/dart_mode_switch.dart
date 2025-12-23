@@ -1,106 +1,70 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:flutter/animation.dart' show Color;
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:sukhingthan_portfolio/src/theme/text_styles.dart';
 
-import '../../theme/app_theme.dart';
 import '../../theme/theme_mode_provider.dart';
 
-// class DarkModeSwitch extends ConsumerWidget {
-//   const DarkModeSwitch({super.key});
-//
-//   @override
-//   Widget build(BuildContext context, WidgetRef ref) {
-//     final themeMode=ref.watch(themeModeProvider);
-//     final isDart=themeMode==ThemeMode.dark;
-//     final scheme=Theme.of(context).colorScheme;
-//     return SelectionContainer.disabled(
-//       child: AnimatedToggleSwitch<bool>.dual(
-//         current: isDart?ThemeMode.dark:ThemeMode.light,
-//         onChanged: (_) {
-//          ref.read(themeModeProvider.notifier).state=isDart?ThemeMode.light:ThemeMode.dark;
-//         },
-//         first: false,
-//         second: true,
-//         spacing: 8,
-//         height: 36,
-//         indicatorSize: const Size.square(32),
-//         animationCurve: Curves.decelerate,
-//         style: ToggleStyle(
-//           backgroundColor: Theme.of(context).colorScheme.primary,
-//           borderColor: Colors.transparent,
-//         ),
-//         styleBuilder: (_) => ToggleStyle(
-//           indicatorColor: _getDarkMode(ref)
-//               ? Theme.of(context).colorScheme.onPrimary
-//               : Theme.of(context).switchTheme.thumbColor?.resolve({}),
-//         ),
-//         iconBuilder: (darkMode) {
-//           return _buildSwitchIcon(
-//             ref: ref,
-//             context: context,
-//             darkMode: darkMode,
-//           );
-//         },
-//         textBuilder: (darkMode) {
-//           return _buildSwitchIcon(
-//             ref: ref,
-//             context: context,
-//             darkMode: !darkMode,
-//           );
-//         },
-//       ),
-//     );
-//   }
-//
-//   bool _getDarkMode(WidgetRef ref) {
-//      return ref.read(themeModeProvider.notifier).state
-//   }
-//
-//   Icon _buildSwitchIcon({
-//     required WidgetRef ref,
-//     required BuildContext context,
-//     required bool darkMode,
-//   }) {
-//     if (darkMode) {
-//       if (_getDarkMode(ref)) {
-//         return Icon(
-//           Icons.mode_night_outlined,
-//           color: Theme.of(context).colorScheme.onInverseSurface,
-//         );
-//       }
-//       return const Icon(Icons.mode_night_outlined);
-//     }
-//     if (!_getDarkMode(ref)) {
-//       return Icon(
-//         Icons.wb_sunny_outlined,
-//         color: Theme.of(context).colorScheme.onInverseSurface,
-//       );
-//     }
-//     return const Icon(Icons.wb_sunny_outlined);
-//   }
-// }
 class DarkModeSwitch extends ConsumerWidget {
   const DarkModeSwitch({super.key});
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDark = ref.watch(themeModeProvider) == ThemeMode.dark;
-    final scheme = Theme.of(context).colorScheme;
 
-    return IconButton(
-      tooltip: isDark ? 'Light mode' : 'Dark mode',
-      onPressed: () {
-        ref.read(themeModeProvider.notifier).toggle();
-      },
-      icon: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 800),
-        transitionBuilder: (child, animation) =>
-            RotationTransition(turns: animation, child: child),
-        child: Icon(
-          isDark ? Icons.dark_mode_rounded : Icons.light_mode_rounded,
-          key: ValueKey(isDark),
-          color: Colors.white,
+    return SelectionContainer.disabled(
+      child: AnimatedToggleSwitch<bool>.dual(
+        current: isDark,
+        first: false,
+        second: true,
+        height: 36,
+        spacing: 6,
+        indicatorSize: const Size.square(30),
+
+        onChanged: (value) {
+          ref.read(themeModeProvider.notifier).state =
+          value ? ThemeMode.dark : ThemeMode.light;
+        },
+
+        style: ToggleStyle(
+          backgroundColor: isDark
+              ? Theme.of(context).appBarTheme.foregroundColor!.withOpacity(0.45)
+              : Theme.of(context).appBarTheme.foregroundColor!.withOpacity(0.45),
+          borderRadius: BorderRadius.circular(20),
+          borderColor: Colors.transparent,
         ),
+
+        styleBuilder: (value) => ToggleStyle(
+          indicatorColor: value
+              ? const Color(0xFF000000) // dark slate
+              : Colors.white,
+        ),
+
+        iconBuilder: (value) => Icon(
+          value ? Icons.mode_night_outlined : Icons.wb_sunny_outlined,
+          size: 18,
+          color: value == isDark
+              ? Theme.of(context).appBarTheme.backgroundColor!
+              :Theme.of(context).appBarTheme.foregroundColor!,
+        ),
+
+        textBuilder: (value) => Text(
+          value ? 'Dark' : 'Light',
+          maxLines: 1,
+          softWrap: false,
+          overflow: TextOverflow.visible,
+          style: TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w500,
+            color: value == isDark
+                ? Colors.white
+                : context.appBarColor
+          ),
+        ),
+
+
       ),
     );
   }

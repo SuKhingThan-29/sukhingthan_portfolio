@@ -14,7 +14,7 @@ class MobileContent extends StatelessWidget {
           title: 'My Story',
           child: Text(
             'Senior Mobile Developer with 8+ years of experience specializing in Flutter, Android (Java/Kotlin), backend APIs, and scalable architectures. Experienced in leading teams and delivering full-stack solutions, with strong interest in cybersecurity, data analytics, applied AI, and updated technologies.',
-            style: context.subtitleStyle,
+            style: context.bodyMedium,
           ),
         ),
         const SizedBox(height: 16),

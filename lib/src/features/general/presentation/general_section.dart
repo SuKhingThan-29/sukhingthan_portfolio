@@ -67,19 +67,35 @@ class _GeneralSectionState extends ConsumerState<GeneralSection> {
     });
 
     if (nearest != null) {
-      ref.read(activeSectionProvider.notifier).state = nearest;
+      ref
+          .read(activeSectionProvider.notifier)
+          .state = nearest;
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    //   return Scaffold(
+    //     appBar: Responsive.isDesktop(context)
+    //         ? const TopNavBar()
+    //         : AppBar(title: const Text('Portfolio')),
+    //    // actions: [DarkModeSwitch()],),
+    //     drawer: Responsive.isDesktop(context)?null:const MySafeArea(
+    //       child: EndDrawer(),
+    //     ),
+    //     body: const GeneralContent(),
+    //   );
+    // }
     return Scaffold(
-      appBar: Responsive.isDesktop(context)?const TopNavBar():AppBar(title: const Text('Portfolio'),
-      actions: [DarkModeSwitch()],),
-      drawer: Responsive.isDesktop(context)?null:const MySafeArea(
-        child: EndDrawer(),
+      appBar: Responsive.isDesktop(context)
+          ? null
+          : AppBar(title: const Text('Portfolio')),
+      body: Column(
+        children: [
+          if (Responsive.isDesktop(context)) const TopNavBar(),
+          Expanded(child: GeneralContent()),
+        ],
       ),
-      body: const GeneralContent(),
     );
   }
 }

@@ -27,13 +27,13 @@ class ExperienceCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               '${item.role} • ${item.period}',
-              style: context.captionStyle,
+              style: context.bodyMedium.copyWith(color:Colors.blue)
             ),
             const SizedBox(height: 12),
             ...item.points.map(
                   (e) => Padding(
                 padding: const EdgeInsets.only(bottom: 6),
-                child: Text('• $e'),
+                child: Text('• $e',style: context.bodyMedium,),
               ),
             ),
     TechnologyWrapChips(technologies: item.technologies),

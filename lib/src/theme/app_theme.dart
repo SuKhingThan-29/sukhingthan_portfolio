@@ -8,7 +8,7 @@ class AppTheme {
   static const _lightPrimary = Color(0xff0074b7);
   static const _lightSecondary = Color(0xff60a3d9);
 
-  static const _lightTextPrimary = Color(0xFF0F172A);
+  static const _lightTextPrimary = Color(0xFF000000);
   static const _lightOutline = Color(0xFFE2E8F0);
 
   // ───────────────────────── Dark Colors ─────────────────────────
@@ -41,7 +41,7 @@ class AppTheme {
 
       appBarTheme: const AppBarTheme(
         backgroundColor: _lightPrimary,
-        foregroundColor: _lightTextPrimary,
+        foregroundColor: _lightSecondary,
         elevation: 0,
         centerTitle: false,
       ),
@@ -81,7 +81,7 @@ class AppTheme {
 
       appBarTheme: const AppBarTheme(
         backgroundColor: _darkPrimary,
-        foregroundColor: _darkTextPrimary,
+        foregroundColor: _darkSecondary,
         elevation: 0,
         centerTitle: false,
       ),

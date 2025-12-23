@@ -6,30 +6,29 @@ extension AppTextStyles on BuildContext {
     final c = Theme.of(this).colorScheme;
 
     return t.titleLarge!.copyWith(
-      fontSize: 20,
       fontWeight: FontWeight.w700,
       color: c.onSurface,
-      letterSpacing: -0.3,
+      letterSpacing: 0.3,
     );
   }
 
-  TextStyle get titleStyle {
+  TextStyle get subTitle {
     final t = Theme.of(this).textTheme;
     final c = Theme.of(this).colorScheme;
 
     return t.titleMedium!.copyWith(
-      fontSize: 18,
       fontWeight: FontWeight.w600,
       color: c.onSurface,
+      height: 1.8
     );
   }
 
-  TextStyle get subtitleStyle {
+  TextStyle get bodyMedium {
     final t = Theme.of(this).textTheme;
     final c = Theme.of(this).colorScheme;
 
     return t.bodyMedium!.copyWith(
-      color: c.onSurface.withOpacity(0.75),
+      color: c.onSurface,
       height: 1.6,
     );
   }
@@ -39,19 +38,18 @@ extension AppTextStyles on BuildContext {
     final c = Theme.of(this).colorScheme;
 
     return t.bodySmall!.copyWith(
-      fontSize: 14,
-      color: c.onSurface.withOpacity(0.6),
-      height: 1.4,
+      color: c.onSurface,
+      height: 1.6,
     );
   }
 
   // ---- Colors ----
-  //Color? get appBarColor => Theme.of(this).appBarTheme.backgroundColor;
+  Color get appBarColor => Theme.of(this).appBarTheme.backgroundColor!;
   Color? get iconAccent => Theme.of(this).iconTheme.color;
 
   Color get activeColor => Colors.orangeAccent;
   Color get inActiveColor =>
       Colors.white;
 
-  Color get circleColor => Theme.of(this).colorScheme.secondary;
+  Color get circleColor => Theme.of(this).colorScheme.primary;
 }

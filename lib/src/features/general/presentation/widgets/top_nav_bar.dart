@@ -11,7 +11,8 @@ class TopNavBar extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(64);
-
+  final _cvDownloadUrl =
+      'https://drive.google.com/uc?export=download&id=1lo7AWZAduN2d6Uti6WZQp8X1ikouJQpv';
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final active = ref.watch(activeSectionProvider);
@@ -57,10 +58,48 @@ class TopNavBar extends ConsumerWidget implements PreferredSizeWidget {
         navItem(id: 'education',label:  'Education',key:  ref.watch(educationSectionKeyProvider)),
         navItem(id: 'experience', label: 'Experience', key: ref.watch(experienceSectionKeyProvider)),
         navItem(id: 'projects', label: 'Projects',key:  ref.watch(projectSectionKeyProvider)),
-        navItem(id: 'downloadCV', label: 'Download CV', onTap: downloadCV),
+        navItem(
+          id: 'downloadCV',
+          label: 'Download CV',
+          onTap: () => _confirmAndDownloadCV(context),
+        ),
         const DarkModeSwitch(),
         const SizedBox(width: 8),
       ],
     );
   }
+  void _confirmAndDownloadCV(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Download CV'),
+        content: const Text(
+          'Do you want to download my CV from Google Drive?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _downloadFromDrive();
+            },
+            child: const Text('Download'),
+          ),
+        ],
+      ),
+    );
+
+  }
+
+  void _downloadFromDrive() {
+    html.AnchorElement(href: _cvDownloadUrl)
+      ..target = '_blank'
+      ..click();
+  }
+
+
+
 }

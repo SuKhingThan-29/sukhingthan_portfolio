@@ -16,10 +16,10 @@ class Header extends StatelessWidget {
       children: [
         Avatar(),
         const SizedBox(height: 12),
-        Text('Su Khing Than', style: context.titleStyle),
+        Text('Su Khing Than', style: context.subTitle),
         Text(
           'Senior Mobile & Full-Stack Developer',
-          style: context.subtitleStyle,
+          style: context.bodyMedium,
           textAlign: TextAlign.center,
         ),
       ],

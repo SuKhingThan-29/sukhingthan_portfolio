@@ -21,7 +21,7 @@ class EducationSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: items.map((i) => Padding(
           padding: const EdgeInsets.only(bottom: 10),
-          child: Text('• $i', style: context.subtitleStyle),
+          child: Text('• $i', style: context.bodyMedium),
         )).toList(),
       ),
 

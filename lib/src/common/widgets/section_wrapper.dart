@@ -19,9 +19,9 @@ class SectionWrapper extends StatelessWidget {
         children: [
           Text(
             title,
-            style: context.titleStyle
+            style: context.headlineStyle
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
           child,
         ],
       ),
