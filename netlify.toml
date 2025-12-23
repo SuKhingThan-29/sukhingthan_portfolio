@@ -1,6 +1,11 @@
 [build]
-command = "flutter build web --release"
 publish = "build/web"
+command = """
+    curl -fsSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.6-stable.tar.xz | tar xJ &&
+    export PATH="$PATH:`pwd`/flutter/bin" &&
+    flutter doctor &&
+    flutter build web --release
+  """
 
 [[redirects]]
 from = "/*"
