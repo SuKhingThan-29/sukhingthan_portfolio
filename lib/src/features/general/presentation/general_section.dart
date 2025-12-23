@@ -90,9 +90,11 @@ class _GeneralSectionState extends ConsumerState<GeneralSection> {
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(title: const Text('Portfolio')),
+      drawer: Responsive.isDesktop(context)?null:MySafeArea(child: EndDrawer()),
       body: Column(
         children: [
-          if (Responsive.isDesktop(context)) const TopNavBar(),
+
+          if (Responsive.isDesktop(context))const TopNavBar(),
           Expanded(child: GeneralContent()),
         ],
       ),
