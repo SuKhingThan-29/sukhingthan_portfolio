@@ -1,8 +1,19 @@
-# Su Khing Than — Portfolio (Flutter)
 
-Responsive portfolio built with Flutter (Web + Mobile) using Riverpod and Freezed.
+---
 
-## Features
+## ✅ Correct README.md (FIXED)
+
+Copy this **exactly**:
+
+```md
+# Su Khing Than — Flutter Portfolio
+
+A responsive personal portfolio built with **Flutter (Web & Mobile)**, leveraging **Riverpod** for state management and **Freezed** for immutable data modeling.
+
+---
+
+## ✨ Features
+
 - Fully responsive layout (Desktop / Tablet / Mobile)
 - Smooth scrolling with active navigation highlighting
 - Subtle staggered animations (fade & slide)
@@ -11,7 +22,9 @@ Responsive portfolio built with Flutter (Web + Mobile) using Riverpod and Freeze
 - Centralized, easy-to-edit portfolio data
 - Web-optimized and mobile-friendly performance
 
-## Tech Stack
+---
+
+## 🛠 Tech Stack
 
 - Flutter (Web, Android, iOS)
 - Riverpod – state management
@@ -19,20 +32,20 @@ Responsive portfolio built with Flutter (Web + Mobile) using Riverpod and Freeze
 - Material 3 design principles
 - Responsive UI with adaptive layouts
 
+---
+
 ## 🚀 Getting Started
-## 1️⃣ Install dependencies
+
+### 1️⃣ Install dependencies
 ```bash
-    flutter pub get
+flutter pub get
 
-2. Generate Freezed code:
-
+### 2️⃣ Generate Freezed files
+```
 dart run build_runner build --delete-conflicting-outputs
 
-3. Run the app:
-
+### 3️⃣ Run the application
+````bash
 flutter run -d chrome
-# or
-flutter run
 
 
-# sukhingthan_portfolio
