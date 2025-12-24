@@ -4,7 +4,7 @@ part 'models.freezed.dart';
 part 'models.g.dart'; // <-- REQUIRED FOR JSON SUPPORT
 
 @freezed
-class Experience with _$Experience {
+abstract class Experience with _$Experience {
   const factory Experience({
     required String role,
     required String company,
@@ -21,7 +21,7 @@ class Experience with _$Experience {
 }
 
 @freezed
-class ContactItem with _$ContactItem {
+abstract class ContactItem with _$ContactItem {
   const factory ContactItem({
     required String tooltip,
     required String url,
@@ -33,7 +33,7 @@ class ContactItem with _$ContactItem {
 }
 
 @freezed
-class ResumeItem with _$ResumeItem {
+abstract class ResumeItem with _$ResumeItem {
   const factory ResumeItem({
     required String languageCode,
     required String url,

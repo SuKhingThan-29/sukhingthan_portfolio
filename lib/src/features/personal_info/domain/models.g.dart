@@ -6,19 +6,18 @@ part of 'models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ExperienceImpl _$$ExperienceImplFromJson(Map<String, dynamic> json) =>
-    _$ExperienceImpl(
-      role: json['role'] as String,
-      company: json['company'] as String,
-      description: json['description'] as String,
-      startYear: (json['startYear'] as num?)?.toInt(),
-      startMonth: (json['startMonth'] as num?)?.toInt(),
-      endYear: (json['endYear'] as num?)?.toInt(),
-      endMonth: (json['endMonth'] as num?)?.toInt(),
-      isPresent: json['isPresent'] as bool?,
-    );
+_Experience _$ExperienceFromJson(Map<String, dynamic> json) => _Experience(
+  role: json['role'] as String,
+  company: json['company'] as String,
+  description: json['description'] as String,
+  startYear: (json['startYear'] as num?)?.toInt(),
+  startMonth: (json['startMonth'] as num?)?.toInt(),
+  endYear: (json['endYear'] as num?)?.toInt(),
+  endMonth: (json['endMonth'] as num?)?.toInt(),
+  isPresent: json['isPresent'] as bool?,
+);
 
-Map<String, dynamic> _$$ExperienceImplToJson(_$ExperienceImpl instance) =>
+Map<String, dynamic> _$ExperienceToJson(_Experience instance) =>
     <String, dynamic>{
       'role': instance.role,
       'company': instance.company,
@@ -30,27 +29,25 @@ Map<String, dynamic> _$$ExperienceImplToJson(_$ExperienceImpl instance) =>
       'isPresent': instance.isPresent,
     };
 
-_$ContactItemImpl _$$ContactItemImplFromJson(Map<String, dynamic> json) =>
-    _$ContactItemImpl(
-      tooltip: json['tooltip'] as String,
-      url: json['url'] as String,
-      icon: json['icon'] as String,
-    );
+_ContactItem _$ContactItemFromJson(Map<String, dynamic> json) => _ContactItem(
+  tooltip: json['tooltip'] as String,
+  url: json['url'] as String,
+  icon: json['icon'] as String,
+);
 
-Map<String, dynamic> _$$ContactItemImplToJson(_$ContactItemImpl instance) =>
+Map<String, dynamic> _$ContactItemToJson(_ContactItem instance) =>
     <String, dynamic>{
       'tooltip': instance.tooltip,
       'url': instance.url,
       'icon': instance.icon,
     };
 
-_$ResumeItemImpl _$$ResumeItemImplFromJson(Map<String, dynamic> json) =>
-    _$ResumeItemImpl(
-      languageCode: json['languageCode'] as String,
-      url: json['url'] as String,
-    );
+_ResumeItem _$ResumeItemFromJson(Map<String, dynamic> json) => _ResumeItem(
+  languageCode: json['languageCode'] as String,
+  url: json['url'] as String,
+);
 
-Map<String, dynamic> _$$ResumeItemImplToJson(_$ResumeItemImpl instance) =>
+Map<String, dynamic> _$ResumeItemToJson(_ResumeItem instance) =>
     <String, dynamic>{
       'languageCode': instance.languageCode,
       'url': instance.url,

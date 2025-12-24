@@ -6,13 +6,12 @@ part of 'technology.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TechnologyImpl _$$TechnologyImplFromJson(Map<String, dynamic> json) =>
-    _$TechnologyImpl(
-      name: json['name'] as String?,
-      icon: json['icon'] == null
-          ? null
-          : IconModel.fromJson(json['icon'] as Map<String, dynamic>),
-    );
+_Technology _$TechnologyFromJson(Map<String, dynamic> json) => _Technology(
+  name: json['name'] as String?,
+  icon: json['icon'] == null
+      ? null
+      : IconModel.fromJson(json['icon'] as Map<String, dynamic>),
+);
 
-Map<String, dynamic> _$$TechnologyImplToJson(_$TechnologyImpl instance) =>
+Map<String, dynamic> _$TechnologyToJson(_Technology instance) =>
     <String, dynamic>{'name': instance.name, 'icon': instance.icon};

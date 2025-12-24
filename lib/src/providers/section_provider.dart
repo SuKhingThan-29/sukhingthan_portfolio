@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hooks_riverpod/legacy.dart';
 
 final aboutSectionKeyProvider = Provider((_) => GlobalKey());
 final experienceSectionKeyProvider = Provider((_) => GlobalKey());

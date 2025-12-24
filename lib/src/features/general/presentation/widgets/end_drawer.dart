@@ -88,7 +88,6 @@ class EndDrawer extends ConsumerWidget {
                           ),
                         ),
                         gapH40,
-
                       ],
                     ),
                   ),
@@ -100,5 +99,4 @@ class EndDrawer extends ConsumerWidget {
       ),
     );
   }
-
 }
