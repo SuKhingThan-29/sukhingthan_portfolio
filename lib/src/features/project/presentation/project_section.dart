@@ -23,7 +23,7 @@ class _ProjectSectionState extends State<ProjectSection>
       name: 'Portfolio Website',
       description:
           'Responsive Flutter Web portfolio with animations and Riverpod.',
-      url: 'https://github.com/SuKhingThan-29/my_portfolio',
+      url: 'https://github.com/SuKhingThan-29/sukhingthan_portfolio',
       image: 'assets/projects/portfolio.png',
     ),
     Project(
