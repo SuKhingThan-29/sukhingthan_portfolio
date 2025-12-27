@@ -13,7 +13,7 @@ import '../mobile/mobile_layout.dart';
 import '../tablet/tablet_layout.dart';
 
 class GeneralContent extends ConsumerWidget {
-  const GeneralContent();
+  const GeneralContent({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

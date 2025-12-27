@@ -7,7 +7,7 @@ extension AppTextStyles on BuildContext {
 
     return t.titleLarge!.copyWith(
       fontWeight: FontWeight.w700,
-      color: c.onSurface,
+      color: c.secondary,
       letterSpacing: 0.3,
     );
   }

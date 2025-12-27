@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:sukhingthan_portfolio/src/theme/text_styles.dart';
 
 class MyDrawerButton extends StatefulHookConsumerWidget {
   const MyDrawerButton({
     super.key,
     required this.title,
     required this.sectionKey,
+    this.onTap,
   });
 
   final String title;
   final GlobalKey sectionKey;
+  final VoidCallback? onTap;
 
   @override
   ConsumerState<MyDrawerButton> createState() => _MyDrawerButtonState();
@@ -56,7 +59,7 @@ class _MyDrawerButtonState extends ConsumerState<MyDrawerButton> {
           onTap: () => _onTap(context),
           child: Text(
             widget.title,
-            style: TextStyle(color: colorAnimation),
+            style: context.subTitle.copyWith(fontWeight: FontWeight.normal),
           ),
         ),
       ),

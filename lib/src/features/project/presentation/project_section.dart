@@ -29,7 +29,7 @@ class _ProjectSectionState extends State<ProjectSection>
     Project(
       name: 'Little Tots Cards',
       description: 'Children learning app with cards, sound, and animations.',
-      url: 'https://github.com/AladdineDev/learnflow_backoffice',
+      url: 'https://github.com/SuKhingThan-29/little_tots_cards',
       image: 'assets/projects/little_tots_cards.jpg',
     ),
   ];

@@ -16,7 +16,7 @@ class AppTheme {
   static const _darkSurface = Color(0xFF111827);
 
   static const _darkPrimary = Color(0xFF002E73);
-  static const _darkSecondary = Color(0xFF1E293B);
+  static const _darkSecondary = Colors.orangeAccent;
 
   static const _darkTextPrimary = Color(0xFFE5E7EB);
   static const _darkOutline = Color(0xFF1F2937);

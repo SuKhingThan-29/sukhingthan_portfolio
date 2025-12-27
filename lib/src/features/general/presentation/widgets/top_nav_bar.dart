@@ -16,14 +16,7 @@ class TopNavBar extends ConsumerWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final active = ref.watch(activeSectionProvider);
-    void downloadCV() {
-      final url = 'assets/cv/Su_Khing_Than_CV.pdf';
-     html.AnchorElement(href: url)
-        ..setAttribute('download', 'Su_Khing_Than_CV.pdf')
-        ..click();
-    }
     Widget navItem({required String id,required String label, GlobalKey? key,VoidCallback? onTap}) {
-      final scheme = Theme.of(context).colorScheme;
 
       final activeColor = context.activeColor; // gold color
       final inactiveColor = context.inActiveColor;
@@ -51,7 +44,7 @@ class TopNavBar extends ConsumerWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
       elevation: 0,
-      title:  Text('Portfolio',style: TextStyle(color: Colors.white54),),
+      title:  Text('Portfolio',style: TextStyle(color: Colors.white),),
       centerTitle: false,
       actions: [
         navItem(id: 'about',label:  'About me', key: ref.watch(aboutSectionKeyProvider)),
